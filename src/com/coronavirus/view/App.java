@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.net.URL;
 
 public class App {
-    private static final String TITLE = "Gra Koronawirus AntiPlague";
+    private static final String TITLE = "Coronavirus AntiPlague Simulation";
     private JFrame frame;
 
     App() {
@@ -35,7 +35,13 @@ public class App {
         highScoresButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                throw new RuntimeException("Not implemented yet");
+                SwingUtilities.invokeLater(new Runnable() {
+                                               @Override
+                                               public void run() {
+                                                   final HighScores highScores = new HighScores(frame);
+                                               }
+                                           }
+                );
             }
         });
 

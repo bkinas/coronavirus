@@ -1,6 +1,8 @@
 package com.coronavirus.model;
 
-public class Score implements Comparable<Score>{
+import java.io.Serializable;
+
+public class Score implements Comparable<Score>, Serializable {
     private final int days;
     private final int infectedPeople;
     private final int allPeople;
